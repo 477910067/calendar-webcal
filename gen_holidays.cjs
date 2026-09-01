@@ -1,7 +1,8 @@
 // 生成「中国法定节假日及调休-纯净版.ics」
 // 规则：
 //  1) 调休补班日显示为「XX(班)」，如 国庆节(班)
-//  2) 连续同名的法定节假日合并为单条区间事件（如 中秋 9/25~9/27）
+//  2) 法定节假日显示为「XX(休)」，如 中秋节(休)、国庆节(休)
+//  3) 连续同名的法定节假日合并为单条区间事件（如 中秋 9/25~9/27）
 // 数据源：chinese-days（每日同步国务院安排）
 // 用法：NODE_PATH=<node_modules> node gen_holidays.cjs [输出路径]
 
@@ -41,7 +42,7 @@ function flush() {
   events.push({
     start: run.start,
     endExclusive: nextDay(run.last), // 全天事件 DTEND 排他，取末日+1
-    summary: run.name,
+    summary: run.name + "(休)",
     makeup: false,
   });
   run = null;
@@ -84,7 +85,7 @@ lines.push("PRODID:-//ShanXin//CN Holidays//ZH");
 lines.push("CALSCALE:GREGORIAN");
 lines.push("METHOD:PUBLISH");
 lines.push("X-WR-CALNAME:中国法定节假日及调休（纯净版）");
-lines.push("X-WR-CALDESC:仅含法定节假日与调休补班，无节气/农历/黄历。节假日按区间合并显示，补班标注(班)。2024-2026。");
+lines.push("X-WR-CALDESC:仅含法定节假日与调休补班，无节气/农历/黄历。节假日按区间合并显示并标注(休)，补班标注(班)。2024-2026。");
 lines.push("X-WR-TIMEZONE:Asia/Shanghai");
 
 for (const ev of events) {
