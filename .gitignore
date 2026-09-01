@@ -1,0 +1,3 @@
+server.py
+*.err
+.DS_Store
