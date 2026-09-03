@@ -1,3 +1,12 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//ShanXin//CN Folk Festivals//ZH
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:中国民俗节及纪念日（纯净版）
+X-WR-CALDESC:仅含民俗节日与纪念日，无节气/无法定节假日。圆标:星星。2024-2035。
+X-WR-TIMEZONE:Asia/Shanghai
+X-APPLE-WEB-CALENDAR-ICON-URL:https://477910067.github.io/calendar-webcal/icon/folk.png
 BEGIN:VEVENT
 UID:folk-2024-01-18-腊八节@shanxin
 DTSTART;VALUE=DATE:20240118
